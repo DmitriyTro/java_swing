@@ -3,7 +3,7 @@ package com.dmitriitrofimov;
 import javax.swing.*;
 import java.awt.*;
 
-public class TextField {
+public class TextFieldTest {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("this is title form...");
 
