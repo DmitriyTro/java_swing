@@ -2,6 +2,8 @@ package com.dmitriitrofimov;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GridBagLayoutTest {
 	public static void main(String[] args) {
@@ -60,7 +62,20 @@ public class GridBagLayoutTest {
 				GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL,
 				new Insets(2, 2, 2, 2), 0, 0));
 
+		registrationButton.addActionListener(new RegistrationButtonActionListener());
+		loginButton.addActionListener(new RegistrationButtonActionListener());
 		frame.setVisible(true);
 		frame.pack();
+	}
+}
+
+class RegistrationButtonActionListener implements ActionListener {
+
+	@Override
+	public void actionPerformed(ActionEvent event) {
+		if (event.getSource() instanceof JButton) {
+			String nameButtonStr = ((JButton) event.getSource()).getText();
+			System.out.println("button name: " + nameButtonStr);
+		}
 	}
 }
