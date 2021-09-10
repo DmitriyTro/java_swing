@@ -22,6 +22,9 @@ public class JTableTest {
 		JScrollPane bookTableScrollPage = new JScrollPane(bookTable);
 		bookTableScrollPage.setPreferredSize(new Dimension(400, 400));
 
+		bookTable.setBackground(Color.GRAY);
+		bookTable.setForeground(Color.WHITE);
+
 		String[] str = new String[4];
 		str[0] = "0";
 		str[1] = "book title";
