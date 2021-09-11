@@ -8,15 +8,26 @@ public class Line extends Line2D {
 
 	private Point p1;
 	private Point p2;
+	private double x0;
+	private double y0;
+	private double r = 100.0;
+	private double angle = 6;
+	private double i = 0.0;
 
 	public Line() {
 		p1 = new Point();
 		p2 = new Point();
+
+		x0 = p1.getX();
+		y0 = p1.getY();
 	}
 
 	public Line(double x1, double y1, double x2, double y2) {
 		p1 = new Point(x1, y1);
 		p2 = new Point(x2, y2);
+
+		x0 = p1.getX();
+		y0 = p1.getY();
 	}
 
 	@Override
@@ -58,5 +69,17 @@ public class Line extends Line2D {
 	@Override
 	public Rectangle2D getBounds2D() {
 		return null;
+	}
+
+	public void movie() {
+		if (i * angle > 360) {
+			i = 0.0;
+		} else {
+			i += 0.009;
+		}
+		double newX = x0 + r * Math.cos(i * angle);
+		double newY = y0 + r * Math.sin(i * angle);
+
+		this.setLine(p1.getX(), p1.getY(), newX, newY);
 	}
 }
