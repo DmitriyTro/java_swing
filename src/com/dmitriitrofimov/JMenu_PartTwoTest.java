@@ -32,6 +32,7 @@ public class JMenu_PartTwoTest {
 		itemMenu1.add(subMenuItem2);
 		itemMenu1.add(subMenuItem3);
 
+		itemMenu2.setIcon(new ImageIcon("plus.png"));
 
 		frame.setJMenuBar(jMenuBar);
 		frame.setVisible(true);
